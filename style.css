@@ -1,0 +1,84 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;     
+}
+
+main{
+    height: 100%;
+    overflow:hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+@font-face {
+    font-family: "workhorse";
+    src: url("Web_App/WorkhorseScriptTest-ExtraFine.woff") format('woff');
+  }
+
+@font-face {
+    font-family: "other";
+    src: url("Web_App/PPHatton-Ultralight.woff") format('woff');
+  }
+
+.grid-container {
+    display: grid;
+    gap: 0rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(6, 95px);
+    place-content: center;
+    height: 80vh;
+    max-width: 80%;
+    margin-top: 20px;
+}
+
+.grid-item {
+    grid-column: span 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-item:hover img {
+    transform: scale(1.2);
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    transition: transform .3s ease;
+}
+
+.text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 10px
+}
+
+.text-one{
+    font-family: 'workhorse'; 
+    font-size: 100px;
+}
+
+.text-two{
+    font-family:'other'; 
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+
+@media screen and (max-width: 900px) {
+    .grid-container {
+        grid-template-rows: repeat(12, 95px);
+    }
+    
+    .grid-item {
+        grid-column: span 1;
+        position: relative;
+        overflow: hidden;
+    }
+}
